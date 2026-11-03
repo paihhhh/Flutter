@@ -1,3 +1,5 @@
+import 'package:first_app/custom_button.dart';
+import 'package:first_app/custom_text.dart';
 import 'package:flutter/material.dart';
 
 // Widgets are the components that make up the Ui og an app
@@ -14,29 +16,20 @@ void main(){
     MaterialApp(
       home: Scaffold(
         body: Container(
-          decoration: BoxDecoration(gradient: LinearGradient(colors: [Colors.pink, Colors.blue], begin: AlignmentGeometry.topCenter, end: AlignmentGeometry.bottomCenter)),
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Colors.pink, Colors.blue], 
+              begin: AlignmentGeometry.topCenter, 
+              end: AlignmentGeometry.bottomCenter)),
           child: Center(
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Center(
-                  child: Text(
-                    'Hello World',
-                    style: TextStyle(
-                      color: Colors.blue, 
-                    fontSize: 30
-                    ),
-                  ),
-                ),
-                TextButton(
-                  onPressed: clicked, 
-                  child: Text(
-                    'Click Me',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20
-                    ),)
-            )],
+                CustomText("Hello"),
+                CustomText("World"),  
+                CustomButton(),
+                Text("Hewwo")
+              ],
             ),
           ),
         ),
